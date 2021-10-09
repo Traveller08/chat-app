@@ -1,9 +1,12 @@
 import React from 'react'
-
+import './Homepage.css'
 export default function Homepage() {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+          <div className="mid-part">
+            <div className="home-left"></div>
+            <div className="home-right"></div>
+         </div>  
+        </>
     )
 }

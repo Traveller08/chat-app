@@ -10,34 +10,39 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+ 
     <link rel="manifest" href="manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+ 
     <title>React App</title>
+    <style>
+      body,html{
+        background-color: #fafafa;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script>
+      
+          import { initializeApp } from "firebase/app";
+          import { getAnalytics } from "firebase/analytics";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+          const firebaseConfig = {
+            apiKey: "AIzaSyD6wBtZ83ruSas9BIElY1cQnhgq_Z2Yh7s",
+            authDomain: "chit-chat-1453e.firebaseapp.com",
+            projectId: "chit-chat-1453e",
+            storageBucket: "chit-chat-1453e.appspot.com",
+            messagingSenderId: "81763095285",
+            appId: "1:81763095285:web:7b941da2159ff7f6ba6bbc",
+            measurementId: "G-R9R893W507"
+          };
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
