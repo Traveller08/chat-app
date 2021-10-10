@@ -1,15 +1,14 @@
 import React , {useState , useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { RiChatSmile3Fill } from 'react-icons/ri';
 import {AiFillHome} from 'react-icons/ai';
 import {FaFacebookMessenger} from 'react-icons/fa';
 import {MdOutlineAddBox} from 'react-icons/md';
-import Button from './Button';
 import './Navbar.css'
 import {IconContext} from 'react-icons/lib';
 import {RiAccountCircleFill} from 'react-icons/ri'
-function Navbar() {
+import {BsSearch} from "react-icons/bs";
+function Navbr() {
     const [click,setClick] = useState(false);
 
     const handleClick =()=>setClick(!click);
@@ -30,9 +29,9 @@ function Navbar() {
     return (
         <>
            <IconContext.Provider value={{color:'black'}}>
-            <div className="navbar">
-              <div className="navbar-container container">
-                <Link to="/" className="navbar-logo" 
+            <div className="navbr">
+              <div className="navbr-container container">
+                <Link to="/home" className="navbr-logo" 
                   onClick={closeMobileMenu}
                   style={{fontWeight:"900"}}
                 >
@@ -42,25 +41,35 @@ function Navbar() {
                 <div className="menu-icon" onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
                 </div>
+                
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                <li className="nav-item  m-rght">
+                        <div className="nav-links">
+                            <div className="input-grp-div">
+                               <BsSearch className='search-icon'/>
+                               <input className="grp-input" style={{fontSize:"14px"}}></input>
+                            </div>
+                           
+                        </div>
+                    </li>
                     <li className="nav-item">
-                        <Link to='/' className="nav-links" onClick={closeMobileMenu}>
-                           <AiFillHome style={{color:"black",fontSize:"24px"}}/>
+                        <Link to='/home' className="nav-links" onClick={closeMobileMenu}>
+                           <AiFillHome style={{fontSize:"24px"}} className="icn"/>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link to='/direct/inbox' className="nav-links" onClick={closeMobileMenu}>
-                            <FaFacebookMessenger style={{color:"black",fontSize:"24px"}} />
+                            <FaFacebookMessenger style={{fontSize:"24px"}} className="icn"/>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link to='/create' className="nav-links" onClick={closeMobileMenu}>
-                            <MdOutlineAddBox  style={{color:"black",fontSize:"24px"}} />
+                            <MdOutlineAddBox  style={{fontSize:"24px"}} className="icn"/>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link to='/profile' className="nav-links" onClick={closeMobileMenu}>
-                            <RiAccountCircleFill style={{color:"black",fontSize:"24px"}} />
+                            <RiAccountCircleFill style={{fontSize:"24px"}} className="icn" />
                         </Link>
                     </li>
                     {/* <li className="nav-btn">
@@ -90,4 +99,4 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+export default Navbr;

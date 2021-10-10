@@ -1,8 +1,10 @@
 import React from 'react'
 import './Chats.css'
+import Navbar from '../../Navbar'
 export default function Chat() {
     return (
         <>
+        <Navbar />
           <div className="chat-mid-part">
            <div className="top-bar">
               <div className="top-left"></div>
